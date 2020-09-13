@@ -10,6 +10,6 @@
     "discord.js": "^12.2.0",
     "mojang-api": "0.0.2",
     "mysql": "^2.18.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   }
 }
