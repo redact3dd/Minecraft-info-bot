@@ -4,7 +4,7 @@
 ###### This project is not releated  to Mojang and respects it's guidelines. Minecraft is a trademark of Mojang Synergies AB.
 **Minecraft info** is a Discord bot written 100% in Node.js.
 
-**Please note**: information like the bot's token has been removed. Please, set variables values in 'database/database.js' and the bot's token in app.js.
+**Please note**: information like the bot's token has been removed. Please, create a .env file and write **DISCORD_TOKEN=*your_discord_token*** in it.
 
 Default prefix: !
 
@@ -14,16 +14,15 @@ Default prefix: !
 Usage:
 !ping
 ****
-* **help**: Displays the command list with a description.
+* **help**: Displays the command list. If a command is specified, gives additional info about the command. The command always works even with the default prefix.
 
 Usage:
-!help [page]
+!help \[command]
 ****
 * **prefix**: Displays the current prefix for the server. If an argument is specified, changes the server's prefix into the argument.
-The command works even with the default prefix instead of the custom.
 
 Usage:
-!prefix [new prefix]
+!prefix \[new prefix]
 ****
 * **server**: Checks server's online status and online players.
 
