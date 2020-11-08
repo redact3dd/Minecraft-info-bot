@@ -36,7 +36,7 @@ module.exports = {
                     author: {
                         name: 'Minecraft info',
                         icon_url: '',
-                        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+                        url: 'https://github.com/Jystro/Minecraft-info-bot'
                     },
                     description: resp.name + "'s profile",
                     thumbnail: {
