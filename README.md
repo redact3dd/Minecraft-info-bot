@@ -46,6 +46,5 @@ Usage:
 
 # Libraries
 * [discord.js](https://www.npmjs.com/package/discord.js)
-* [node-fetch](https://www.npmjs.com/package/node-fetch)
+* [dotenv](https://www.npmjs.com/package/dotenv)
 * [Mojang API](https://www.npmjs.com/package/mojang-api)
-* [mysql](https://www.npmjs.com/package/mysql)
