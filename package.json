@@ -1,0 +1,17 @@
+{
+  "name": "minecraft-info-bot",
+  "version": "0.1.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jystro",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0",
+    "mojang-api": "0.0.2",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
