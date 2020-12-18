@@ -48,3 +48,4 @@ Usage:
 * [discord.js](https://www.npmjs.com/package/discord.js)
 * [dotenv](https://www.npmjs.com/package/dotenv)
 * [Mojang API](https://www.npmjs.com/package/mojang-api)
+* [xmlhttprequest](https://www.npmjs.com/package/xmlhttprequest)
