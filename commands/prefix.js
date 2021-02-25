@@ -1,4 +1,4 @@
-const prefix = require('../exports/exports.js');
+const servers = require('../exports/exports.js');
 
 module.exports = {
     name: 'prefix',
@@ -7,16 +7,16 @@ module.exports = {
     execute(message, args) {
         //send server's prefix if there're no arguments
         if(!args.length) {
-            message.channel.send('This server\'s prefix is ' + prefix.getPrefix(message.guild.id));
+            message.channel.send('This server\'s prefix is ' + servers.getPrefix(message.guild.id));
             return;
         }
         //set new prefix if there are arguments
-        prefix.setPrefix(message.guild.id, args[0])
+        servers.setPrefix(message.guild.id, args[0])
         .then(response => {
             message.channel.send(response);
         })
         .catch(err => {
-            message.channel.send('There was an error while tryng to change prefix');
+            message.channel.send('There was an error while trying to change prefix. Please check the github page to open an issue or join the Discord server');
             console.error(err);
         });
     }
