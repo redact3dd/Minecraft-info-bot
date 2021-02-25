@@ -4,7 +4,7 @@
 ###### This project is not releated  to Mojang and respects it's guidelines. Minecraft is a trademark of Mojang Synergies AB.
 **Minecraft info** is a Discord bot written 100% in Node.js.
 
-**Please note**: information like the bot's token has been removed. Please, create a .env file and write **DISCORD_TOKEN=*your_discord_token*** in it.
+**Please note**: information like the bot's token has been removed. Start the program for the first time to generate a .env file and insert your token in it.
 
 Default prefix: !
 
@@ -41,7 +41,7 @@ Usage:
 
 # Acknowledgments
 
-* Servers info: [Minecraft Server Status](https://mcsrvstat.us/)
+* Servers' info: [Minecraft Server Status](https://mcsrvstat.us/)
 * Skins and avatars: [Crafatar](https://crafatar.com)
 
 # Libraries
