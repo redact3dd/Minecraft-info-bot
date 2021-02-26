@@ -12,7 +12,7 @@ prefix role clear
 module.exports = {
     name: 'prefix',
     description: 'Prefix releated commands',
-    args: '[new prefix]',
+    args: '[set/role] [set/add/remove/clear]',
     execute(message, args) {
         //send server's prefix if there're no arguments
         if(!args.length) {
