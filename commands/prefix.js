@@ -120,7 +120,7 @@ module.exports = {
                     });
                     return message.channel.send(response);
                 }
-                return message.channel.send('Only server administrators can change the prefix');
+                return message.channel.send('Server administrators are the only ones who can change the prefix');
             }
         }
     }
