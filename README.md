@@ -76,4 +76,3 @@ If you need help with the bot, join the [Discord server](https://discord.gg/sBMG
 * [discord.js](https://www.npmjs.com/package/discord.js)
 * [dotenv](https://www.npmjs.com/package/dotenv)
 * [mojang-api](https://www.npmjs.com/package/mojang-api)
-* [xmlhttprequest](https://www.npmjs.com/package/xmlhttprequest)
