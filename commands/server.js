@@ -1,4 +1,4 @@
-const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+const https = require('https');
 
 module.exports = {
     name: 'server',
@@ -10,39 +10,48 @@ module.exports = {
             message.reply('please specify the server\'s ip address');
             return;
         }
-        //create new XMLHttpRequest
-        const xmlHttp = new XMLHttpRequest();
-
-        xmlHttp.onreadystatechange = () => {
-            //check that response is complete
-            if(xmlHttp.readyState === 4) {
-                //create obj from response
-                const resp = JSON.parse(xmlHttp.responseText);
-                //check that hostname exists
+        //create new request
+        const options = {
+            hostname: 'api.mcsrvstat.us',
+            port: 443,
+            path: '/2/' + args[0],
+            method: 'GET'
+        }
+        const request = https.request(options, response => {
+            let str = '';
+            response.on('data', data => {
+                str += data;
+            });
+            response.on('end', () => {
+                resp = JSON.parse(str);
                 if(!resp.hostname) {
                     message.channel.send('Couldn\'t find any server with ip ' + args[0]);
                     return;
                 }
                 //create answer message
-                let response = resp.hostname;
+                let msg = resp.hostname;
                 if(resp.online) {
-                    response += ' is online. Online players: ';
+                    msg += ' is online. Online players: ';
                     if(resp.players.online) {
-                        response += resp.players.online;
+                        msg += resp.players.online;
                     }
                     else {
-                        response += 'none';
+                        msg += 'none';
                     }
                 }
                 else {
-                    response += ' is offline'
+                    msg += ' is offline'
                 }
                 //send answer
-                message.channel.send(response);
-            }
-        }
-        //open and send xhr
-        xmlHttp.open('GET', 'https://api.mcsrvstat.us/2/' + args[0]);
-        xmlHttp.send();
+                message.channel.send(msg);
+            })
+        });
+        //error handling
+        request.on('error', err => {
+            console.log(err);
+            message.channel.send('There was an error trying to get the server\'s information');
+        })
+        //close request
+        request.end()
     }
 }
