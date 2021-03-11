@@ -56,6 +56,7 @@ Sends the link to the installation paragraph of this file
 
 Usage:
 !install
+
 ## Installation
 You can [download](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip) the bot files locally and host it on your own or [add the official one](https://discord.com/api/oauth2/authorize?client_id=728958101499150397&permissions=125952&scope=bot)  
 If you decide to download the files you need to do the following steps
@@ -67,6 +68,9 @@ If you decide to download the files you need to do the following steps
 6. Run the `node .` command again and the bot will be up and running
 
 If you need help with the bot, join the [Discord server](https://discord.gg/sBMGYXh)
+
+## Contributing
+If you wish to contribute to this repository, please follow the indications in CONTRIBUTING.md
 
 ## Acknowledgments
 * Servers' info: [Minecraft Server Status](https://mcsrvstat.us/)
