@@ -61,7 +61,7 @@ You can [download](https://github.com/Jystro/Minecraft-info-bot/archive/master.z
 If you decide to download the files you need to do the following steps
 1. Download the repository using git with `git clone https://github.com/Jystro/Minecraft-info-bot` or by [downloading a zip file](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip)
 2. Open a terminal in the directory of the package.json file
-3. Run the command `npm install discord.js dotenv mojang-api xmlhttprequest`
+3. Run the command `npm install`
 4. Start the bot by typing `node .`. The code will now create three files
 5. Open the file `.env` and write your token after the = character. You can get a token [here](https://discord.com/developers/applications/)
 6. Run the `node .` command again and the bot will be up and running
