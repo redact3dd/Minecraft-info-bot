@@ -12,7 +12,10 @@ module.exports = {
         }
         //send request to find uuid
         mojang.nameToUuid(args[0], (err, resp) => {
-            if(err) console.error(err);
+            if(err || !resp.length) {
+                console.log(err);
+                message.reply('there was an error');
+            }
             else message.channel.send(resp[0].name + '\'s uuid is ' + resp[0].id);
         });
     }

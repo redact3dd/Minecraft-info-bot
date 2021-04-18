@@ -49,7 +49,7 @@ Usage:
 Displays player's name, uuid, skin, cape and name history
 
 Usage:
-!player \<uuid>
+!player \<uuid/name>
 ****
 ### **install**
 Sends the link to the installation paragraph of this file
