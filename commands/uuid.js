@@ -16,7 +16,7 @@ module.exports = {
                 console.log(err);
                 message.reply('there was an error');
             }
-            else message.channel.send(resp[0].name + '\'s uuid is ' + resp[0].id);
+            else message.channel.send(resp[0].name + '\'s UUID is ' + resp[0].id);
         });
     }
 }
