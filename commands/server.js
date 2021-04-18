@@ -1,4 +1,5 @@
 const https = require('https');
+const { version } = require('os');
 
 module.exports = {
     name: 'server',
@@ -42,9 +43,52 @@ module.exports = {
                 else {
                     msg += ' is offline'
                 }
+                let embed = {
+                    color: '#00b300',
+                    title: args[0],
+                    author: {
+                        name: 'Minecraft info',
+                        icon_url: '',
+                        url: 'https://github.com/Jystro/Minecraft-info-bot'
+                    },
+                    thumbnail: {
+                        url: 'https://api.mcsrvstat.us/icon/' + args[0]
+                    },
+                    fields: [{ name: 'Status', value: 'Offline' }],
+                    image: {
+                        url: 'https://api.mcsrvstat.us/icon/' + args[0]
+                    },
+                    timestamp: new Date(),
+                    footer: {
+                        text: 'Minecraft info bot'
+                    }
+                };
+                if(resp.online) {
+                    embed.fields[0].value = 'Online';
+                    embed.fields.push({
+                        name: 'Modt',
+                        value: (resp.motd) ? resp.motd.clean.join('\n') : 'None'
+                    });
+                    embed.fields.push({
+                        name: 'Online players',
+                        value: resp.players.online + '/' + resp.players.max
+                    });
+                    embed.fields.push({
+                        name: 'Version',
+                        value: (Array.isArray(resp.version)) ? resp.version[0] : resp.version
+                    });
+                    embed.fields.push({
+                        name: 'Plugins',
+                        value: (resp.plugins) ? resp.plugins.names.join(', ') : 'None'
+                    });
+                    embed.fields.push({
+                        name: 'Mods',
+                        value: (resp.mods) ? resp.mods.names.join(', ') : 'None'
+                    });
+                }
                 //send answer
-                message.channel.send(msg);
-            })
+                message.channel.send({ embed: embed });
+            });
         });
         //error handling
         request.on('error', err => {

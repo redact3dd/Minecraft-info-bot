@@ -34,7 +34,7 @@ Usage:
 !prefix
 ****
 ### **server**
-Checks server's online status and online players
+Gives information about the server
 
 Usage:
 !server \<ip address>
