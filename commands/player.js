@@ -52,7 +52,7 @@ module.exports = {
                             value: resp.name
                         },
                         {
-                            name: 'Uuid',
+                            name: 'UUID',
                             value: resp.id
                         },
                         {
