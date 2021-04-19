@@ -45,7 +45,7 @@ module.exports = {
                         },
                         description: resp.name + "'s profile",
                         thumbnail: {
-                            url: 'https://crafatar.com/avatars/' + resp.id + '.png'
+                            url: 'https://crafatar.com/avatars/' + resp.id + '.png' + '?overlay'
                         },
                         fields: [{
                             name: 'Name',
@@ -68,7 +68,7 @@ module.exports = {
                             value: nameHistory
                         }],
                         image: {
-                            url: 'https://crafatar.com/renders/body/' + resp.id + '.png'
+                            url: 'https://crafatar.com/renders/body/' + resp.id + '.png' + '?overlay'
                         },
                         timestamp: new Date(),
                         footer: {
