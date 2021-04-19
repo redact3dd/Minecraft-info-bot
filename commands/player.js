@@ -89,20 +89,18 @@ module.exports = {
     },
     //function to get uuid from uuid/name
     getUuid(value, cb) {
-        let uuid = value;
         let error = false;
-        let regex = /[a-f0-9]/gi
-        if((value.match(regex)) ? value.match(regex).length : 0 !== 32 && value.length !== 32) {
-            mojang.nameToUuid(uuid, (err, resp) => {
+        let regex = /^[a-f0-9]{32}$/i //regex for uuids
+        if(!value.match(regex)) {
+            mojang.nameToUuid(value, (err, resp) => {
                 if(err || !resp.length) {
                     error = true;
                     cb(error, null);
                     return;
                 }
-                uuid = resp[0].id;
-                cb(error, uuid);
+                cb(error, resp[0].id);
             });
         }
-        else { cb(error, uuid); }
+        else { cb(error, value); }
     }
 }
