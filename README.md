@@ -62,6 +62,11 @@ Sends the link to this repository
 
 Usage:
 !repo
+### **provider**
+Sends the link to the services the bot uses
+
+Usage:
+!provider
 ## Installation
 You can [download](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip) the bot files locally and host it on your own or [add the official one](https://discord.com/api/oauth2/authorize?client_id=728958101499150397&permissions=125952&scope=bot)  
 If you decide to download the files you need to do the following steps
