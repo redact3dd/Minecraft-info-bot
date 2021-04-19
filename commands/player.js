@@ -1,15 +1,17 @@
 const mojang = require('mojang-api');
+const https = require('https');
 
 module.exports = {
     name: 'player',
     description: 'Diplays player\'s name, uuid, skin, cape and name history',
     args: '<uuid/name>',
     execute(message, args) {
-        //check that the uuid is sent
+        //check that a value is sent
         if(!args.length) {
             message.reply('please specify the player\'s uuid');
             return;
         }
+        //get uuid
         this.getUuid(args[0], (err, uuid) => {
             if(err) {
                 message.channel.send('An error occurred. This might be because the player does not exist');
@@ -28,24 +30,22 @@ module.exports = {
                         console.log(err);
                         return;
                     }
-
-                    let nameHistory = '';
+                    let nameHistory = [];
                     resp1.forEach(element => {
-                        nameHistory += element.name + ', ';
+                        nameHistory.push(element.name);
                     });
-                    nameHistory = nameHistory.slice(0, nameHistory.length - 2);
+                    nameHistory = nameHistory.join(', ');
                     //create embed message
                     let embedMessage = {
                         color: '#00b300',
                         title: resp.name,
                         author: {
                             name: 'Minecraft info',
-                            icon_url: '',
                             url: 'https://github.com/Jystro/Minecraft-info-bot'
                         },
                         description: resp.name + "'s profile",
                         thumbnail: {
-                            url: 'https://crafatar.com/avatars/' + resp.id + '.png' + '?overlay'
+                            url: 'https://crafatar.com/avatars/' + resp.id + '.png?overlay'
                         },
                         fields: [{
                             name: 'Name',
@@ -58,45 +58,51 @@ module.exports = {
                         {
                             name: 'Skin',
                             value: 'https://crafatar.com/skins/' + resp.id + '.png'
-                        },
-                        {
-                            name: 'Cape',
-                            value: 'https://crafatar.com/capes/' + resp.id + '.png'
-                        },
-                        {
-                            name: 'Name history',
-                            value: nameHistory
                         }],
                         image: {
-                            url: 'https://crafatar.com/renders/body/' + resp.id + '.png' + '?overlay'
+                            url: 'https://crafatar.com/renders/body/' + resp.id + '.png?overlay'
                         },
                         timestamp: new Date(),
                         footer: {
-                            text: 'Minecraft info bot'
+                            text: 'Minecraft info bot\nData updated every 20 minutes'
                         }
                     };
-                    //send embed
-                    message.channel.send({  embed: embedMessage  });
+                    //check if cape exists
+                    let cape = 'https://crafatar.com/capes/' + resp.id + '.png';
+                    const req = https.request(cape, res => {
+                        if(res.statusCode == 200) {
+                            embedMessage.fields.push({ name: 'Cape', value: cape });
+                        }
+                        embedMessage.fields.push({ name: 'Name history', value: nameHistory });
+                        //send embed
+                        message.channel.send({  embed: embedMessage  });
+                    });
+                    req.on('error', err => {
+                        console.log(err);
+                        message.reply('there was an error while retrieving the cape');
+                    })
+                    req.end();
                 });
             });
         });
         
     },
+    //function to get uuid from uuid/name
     getUuid(value, cb) {
         let uuid = value;
         let error = false;
         let regex = /[a-f0-9]/gi
-            if(value.match(regex).length !== 32 && value.length !== 32) {
-                mojang.nameToUuid(uuid, (err, resp) => {
-                    if(err || !resp.length) {
-                        error = true;
-                        cb(error, null);
-                        return;
-                    }
-                    uuid = resp[0].id;
-                    cb(error, uuid);
-                });
-            }
-            else { cb(error, uuid); }
+        if((value.match(regex)) ? value.match(regex).length : 0 !== 32 && value.length !== 32) {
+            mojang.nameToUuid(uuid, (err, resp) => {
+                if(err || !resp.length) {
+                    error = true;
+                    cb(error, null);
+                    return;
+                }
+                uuid = resp[0].id;
+                cb(error, uuid);
+            });
+        }
+        else { cb(error, uuid); }
     }
 }

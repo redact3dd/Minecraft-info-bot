@@ -1,5 +1,4 @@
 const https = require('https');
-const { version } = require('os');
 
 module.exports = {
     name: 'server',
@@ -29,26 +28,12 @@ module.exports = {
                     message.channel.send('Couldn\'t find any server with ip ' + args[0]);
                     return;
                 }
-                //create answer message
-                let msg = resp.hostname;
-                if(resp.online) {
-                    msg += ' is online. Online players: ';
-                    if(resp.players.online) {
-                        msg += resp.players.online;
-                    }
-                    else {
-                        msg += 'none';
-                    }
-                }
-                else {
-                    msg += ' is offline'
-                }
+                //create answer message with default offline data
                 let embed = {
                     color: '#00b300',
                     title: args[0],
                     author: {
                         name: 'Minecraft info',
-                        icon_url: '',
                         url: 'https://github.com/Jystro/Minecraft-info-bot'
                     },
                     thumbnail: {
@@ -60,9 +45,10 @@ module.exports = {
                     },
                     timestamp: new Date(),
                     footer: {
-                        text: 'Minecraft info bot'
+                        text: 'Minecraft info bot\nData is updated every 5 minutes'
                     }
                 };
+                //fill with data if it's online
                 if(resp.online) {
                     embed.fields[0].value = 'Online';
                     embed.fields.push({
