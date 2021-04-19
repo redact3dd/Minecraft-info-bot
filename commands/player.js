@@ -101,8 +101,9 @@ module.exports = {
                 }
                 uuid = resp[0].id;
                 cb(error, uuid);
+                return;
             });
         }
-        else { cb(error, uuid); }
+        cb(error, uuid);
     }
 }
