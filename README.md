@@ -62,6 +62,7 @@ Sends the link to this repository
 
 Usage:
 !repo
+****
 ### **provider**
 Sends the link to the services the bot uses
 
