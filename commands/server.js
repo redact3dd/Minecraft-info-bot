@@ -52,7 +52,7 @@ module.exports = {
                 if(resp.online) {
                     embed.fields[0].value = 'Online';
                     embed.fields.push({
-                        name: 'Modt',
+                        name: 'Motd',
                         value: (resp.motd) ? resp.motd.clean.join('\n') : 'None'
                     });
                     embed.fields.push({
