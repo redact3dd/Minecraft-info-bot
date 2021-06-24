@@ -13,15 +13,6 @@ if(!fs.existsSync('./servers.json')) {
     });
     console.log('Success!');
 }
-//create config.json if it doesn't exist
-if(!fs.existsSync('./config.json')) {
-    console.log('config.json does not exist');
-    console.log('Creating config.json...');
-    fs.writeFileSync('./config.json', '{"defaultPrefix": "!"}', err => {
-        console.error(err);
-    });
-    console.log('Success!');
-}
 //create .env if it doesn't exist
 if(!fs.existsSync('./.env')) {
     console.log('.env does not exist');
