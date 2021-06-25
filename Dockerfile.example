@@ -1,0 +1,15 @@
+FROM node:15-slim
+
+COPY --chown=node:node package*.json /app/
+
+WORKDIR /app
+
+RUN npm ci
+
+COPY --chown=node:node . . 
+
+ENV DISCORD_TOKEN=
+
+USER node
+
+CMD ["node", "."]

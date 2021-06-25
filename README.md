@@ -34,7 +34,7 @@ Usage:
 !prefix
 ****
 ### **server**
-Checks server's online status and online players
+Gives information about the server
 
 Usage:
 !server \<ip address>
@@ -49,7 +49,7 @@ Usage:
 Displays player's name, uuid, skin, cape and name history
 
 Usage:
-!player \<uuid>
+!player \<uuid/name>
 ****
 ### **install**
 Sends the link to the installation paragraph of this file
@@ -57,15 +57,33 @@ Sends the link to the installation paragraph of this file
 Usage:
 !install
 
+****
+### **repo**
+Sends the link to this repository
+
+Usage:
+!repo
+****
+### **provider**
+Sends the link to the services the bot uses
+
+Usage:
+!provider
 ## Installation
 You can [download](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip) the bot files locally and host it on your own or [add the official one](https://discord.com/api/oauth2/authorize?client_id=728958101499150397&permissions=125952&scope=bot)  
 If you decide to download the files you need to do the following steps
-1. Download the repository using git with `git clone https://github.com/Jystro/Minecraft-info-bot` or by [downloading a zip file](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip)
+1. Download the repository using git with `git clone https://github.com/Jystro/Minecraft-info-bot` or by [downloading a zip file](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip) and unzipping it
 2. Open a terminal in the directory of the package.json file
-3. Run the command `npm install discord.js dotenv mojang-api xmlhttprequest`
-4. Start the bot by typing `node .`. The code will now create three files
+3. Run the command `npm install`
+4. Start the bot by typing `npm start`. The code will now create two files
 5. Open the file `.env` and write your token after the = character. You can get a token [here](https://discord.com/developers/applications/)
-6. Run the `node .` command again and the bot will be up and running
+6. Run the `node start` command again and the bot will be up and running
+
+If you have Docker installed on your machine, another option is to edit and use the Dockerfile.example. Just remove the extension and change the value of the DISCORD_TOKEN variable to your bot's token
+
+One you're done, build your image with `docker build . --tag Your_image_name:Your_version`
+
+Then run it with `docker run Your_image_name:Your_version`
 
 If you need help with the bot, join the [Discord server](https://discord.gg/sBMGYXh)
 

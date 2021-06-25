@@ -2,5 +2,7 @@
 node_modules
 .vscode
 servers.json
-config.json
 test*
+
+Dockerfile
+.dockerignore

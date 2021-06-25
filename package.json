@@ -1,13 +1,13 @@
 {
   "name": "minecraft-info-bot",
-  "version": "0.1.0",
+  "version": "2.1.3",
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "test": "node ."
+    "start": "node ."
   },
   "author": "Jystro",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
