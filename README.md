@@ -4,7 +4,7 @@
 ###### This project is not releated  to Mojang and respects it's guidelines. Minecraft is a trademark of Mojang Synergies AB.
 **Minecraft info** is a Discord bot written 100% in Node.js
 
-**Please note**: information like the bot's token has been removed. Start the program for the first time to generate a .env file and insert your token in it
+**Please note**: information like the bot's token has been removed. Start the program for the first time to generate a .env file and insert your token in it or set the DISCORD_TOKEN variable in your environment
 
 Default prefix: !
 
@@ -89,7 +89,7 @@ Then run it with `docker run Your_image_name:Current_bot_version`
 If you need help with the bot, join the [Discord server](https://discord.gg/sBMGYXh)
 
 ## Contributing
-If you wish to contribute to this repository, please follow the indications in CONTRIBUTING.md
+If you wish to contribute to this repository, please follow the indications in [CONTRIBUTING.md](https://github.com/Jystro/Minecraft-info-bot/blob/master/CONTRIBUTING.md)
 
 ## Acknowledgments
 * Servers' info: [Minecraft Server Status](https://mcsrvstat.us/)
