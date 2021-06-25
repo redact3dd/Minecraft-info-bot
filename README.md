@@ -56,6 +56,7 @@ Sends the link to the installation paragraph of this file
 
 Usage:
 !install
+
 ****
 ### **repo**
 Sends the link to this repository
@@ -85,6 +86,9 @@ One you're done, build your image with `docker build . --tag Your_image_name:You
 Then run it with `docker run Your_image_name:Your_version`
 
 If you need help with the bot, join the [Discord server](https://discord.gg/sBMGYXh)
+
+## Contributing
+If you wish to contribute to this repository, please follow the indications in CONTRIBUTING.md
 
 ## Acknowledgments
 * Servers' info: [Minecraft Server Status](https://mcsrvstat.us/)
