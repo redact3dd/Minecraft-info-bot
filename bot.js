@@ -1,3 +1,8 @@
+//* https://github.com/Jystro/Minecraft-info-bot/tree/v2.1.3
+// By https://github.com/jystro
+// By https://github.com/yichifauzi
+// By https://github.com/TranquillyUnpleasant
+
 'use strict'
 require('dotenv').config();
 
@@ -13,15 +18,19 @@ if(!fs.existsSync('./servers.json')) {
     });
     console.log('Success!');
 }
-//create .env if it doesn't exist
-if(!fs.existsSync('./.env')) {
-    console.log('.env does not exist');
-    console.log('Creating .env...');
-    fs.writeFileSync('./.env', 'DISCORD_TOKEN=', err => {
-        console.error(err);
-    });
-    console.log('Success!');
-    console.log('Please, insert your token in .env and restart the bot');
+//check if DISCORD_TOKEN is defined
+if(!process.env.DISCORD_TOKEN) {
+    console.log('The DISCORD_TOKEN environment variable is not defined');
+    //create .env if it doesn't exist
+    if(!fs.existsSync('./.env')) {
+        console.log('.env does not exist');
+        console.log('Creating .env...');
+        fs.writeFileSync('./.env', 'DISCORD_TOKEN=', err => {
+            console.error(err);
+        });
+        console.log('Success!');
+    }
+    console.log('Please, set the DISCORD_TOKEN environment variable or add it in .env');
 }
 
 const servers = require('./exports/exports.js');
@@ -78,5 +87,12 @@ client.on('message', message => {
     }
 });
 
+async function close() {
+    console.log('Received terminate signal');
+    console.log('Closing');
+    process.exit();
+}
 
+process.on('SIGINT', close);
+process.on('SIGTERM', close);
 client.login(process.env.DISCORD_TOKEN);

@@ -78,7 +78,7 @@ If you decide to download the files you need to do the following steps
 5. Open the file `.env` and write your token after the = character. You can get a token [here](https://discord.com/developers/applications/)
 6. Run the `node start` command again and the bot will be up and running
 
-If you have Docker installed on your machine, another option is to use the Dockerfile_template. Just rename it to "Dockerfile" and change the value of the DISCORD_TOKEN variable to your bot's token.
+If you have Docker installed on your machine, another option is to edit and use the Dockerfile.example. Just remove the extension and change the value of the DISCORD_TOKEN variable to your bot's token
 
 One you're done, build your image with `docker build . --tag Your_image_name:Your_version`
 
