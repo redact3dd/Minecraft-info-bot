@@ -1,4 +1,4 @@
-const defaultPrefix = require('../config.json').defaultPrefix;
+const defaultPrefix = require('../data/config.json').defaultPrefix;
 
 module.exports = {
     name: 'help',

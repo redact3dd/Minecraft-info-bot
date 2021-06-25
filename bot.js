@@ -10,10 +10,10 @@ const Discord = require('discord.js');
 const fs = require('fs');
 
 //create servers.json if it doesn't exist
-if(!fs.existsSync('./servers.json')) {
+if(!fs.existsSync('./data/servers.json')) {
     console.log('servers.json does not exist');
     console.log('Creating servers.json...');
-    fs.writeFileSync('./servers.json', '{}', err => {
+    fs.writeFileSync('./data/servers.json', '{}', err => {
         console.error(err);
     });
     console.log('Success!');
@@ -34,7 +34,7 @@ if(!process.env.DISCORD_TOKEN) {
 }
 
 const servers = require('./exports/exports.js');
-const defaultPrefix = require('./config.json').defaultPrefix;
+const defaultPrefix = require('./data/config.json').defaultPrefix;
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();

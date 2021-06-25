@@ -1,10 +1,10 @@
-const defaultPrefix = require('../config.json').defaultPrefix;
+const defaultPrefix = require('../data/config.json').defaultPrefix;
 const fs = require('fs');
 
 module.exports = {
     getPrefix(id) {
         try {
-            let servers = JSON.parse(fs.readFileSync('./servers.json'));
+            let servers = JSON.parse(fs.readFileSync('./data/servers.json'));
             //check if the guild has a custom prefix
             if(typeof(servers[id].prefix.value) !== 'undefined') {
                 return servers[id].prefix.value;
@@ -18,13 +18,13 @@ module.exports = {
     setPrefix(id, prefix) {
         return new Promise((resolve, reject) => {
             try {
-                let servers = JSON.parse(fs.readFileSync('./servers.json'));
+                let servers = JSON.parse(fs.readFileSync('./data/servers.json'));
                 //check if the prefix key exists
                 if(!servers.hasOwnProperty(id)) { servers[id] = { prefix: {} } }
                 //set the new prefix
                 servers[id].prefix.value = prefix;
 
-                fs.writeFileSync('./servers.json', JSON.stringify(servers, null, 4));
+                fs.writeFileSync('./data/servers.json', JSON.stringify(servers, null, 4));
                 resolve({ message: 'Successfully changed the prefix. New prefix: ' + prefix });
             }
             catch(err) {
@@ -34,7 +34,7 @@ module.exports = {
     },
     getRoles(id) {
         try {
-            let servers = JSON.parse(fs.readFileSync('./servers.json'));
+            let servers = JSON.parse(fs.readFileSync('./data/servers.json'));
             //check if the guild has any admin role
             if(typeof(servers[id].prefix.roles) !== 'undefined') {
                 return servers[id].prefix.roles;
@@ -48,7 +48,7 @@ module.exports = {
     addRole(id, roles) {
         return new Promise((resolve, reject) => {
             try {
-                let servers = JSON.parse(fs.readFileSync('./servers.json'));
+                let servers = JSON.parse(fs.readFileSync('./data/servers.json'));
                 //check that the key roles exists
                 if(!servers.hasOwnProperty(id)) { servers[id] = { prefix: { roles: [] } } }
                 else if(!servers[id].prefix.hasOwnProperty('roles')) { servers[id].prefix.roles = [] }
@@ -64,7 +64,7 @@ module.exports = {
                     }
                 });
 
-                fs.writeFileSync('./servers.json', JSON.stringify(servers, null, 4));
+                fs.writeFileSync('./data/servers.json', JSON.stringify(servers, null, 4));
                 resolve({ message: 'Successfully updated the authorised roles' });
             }
             catch(err) {
@@ -75,7 +75,7 @@ module.exports = {
     removeRole(id, roles) {
         return new Promise((resolve, reject) => {
             try {
-                let servers = JSON.parse(fs.readFileSync('./servers.json'));
+                let servers = JSON.parse(fs.readFileSync('./data/servers.json'));
                 //check that the key roles exists
                 if(!servers.hasOwnProperty(id)) { servers[id] = { prefix: { roles: [] } } }
                 else if(!servers[id].prefix.hasOwnProperty('roles')) { servers[id].prefix.roles = [] }
@@ -91,7 +91,7 @@ module.exports = {
                     }
                 });
 
-                fs.writeFileSync('./servers.json', JSON.stringify(servers, null, 4));
+                fs.writeFileSync('./data/servers.json', JSON.stringify(servers, null, 4));
                 resolve({ message: 'Successfully updated the authorised roles' });
             }
             catch(err) {
