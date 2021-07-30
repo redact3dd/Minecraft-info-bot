@@ -69,6 +69,12 @@ Sends the link to the services the bot uses
 
 Usage:
 !provider
+****
+### **version**
+Returns the bot's version
+
+Usage:
+!version
 ## Installation
 You can [download](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip) the bot files locally and host it on your own or [add the official one](https://discord.com/api/oauth2/authorize?client_id=728958101499150397&permissions=125952&scope=bot)
 ### Git
