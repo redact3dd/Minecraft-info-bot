@@ -1,1 +1,2 @@
+npm intall
 npm start

@@ -77,14 +77,13 @@ Usage:
 !version
 ## Installation
 You can [download](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip) the bot files locally and host it on your own or [add the official one](https://discord.com/api/oauth2/authorize?client_id=728958101499150397&permissions=125952&scope=bot)
-### Git
+### Git and Node
 These steps are the same for both git and downloading a .zip archive
 1. Download the repository using git with `git clone https://github.com/Jystro/Minecraft-info-bot` or by [downloading a zip file](https://github.com/Jystro/Minecraft-info-bot/archive/master.zip) and unzipping it
 2. Open a terminal in the directory of the package.json file
-3. Run the command `npm install`
-4. Start the bot by typing `npm start`. The code will now create two files
-5. You can set the env variable DISCORD_TOKEN to your token or write it after the = character in the `.env` file. You can get a token [here](https://discord.com/developers/applications/)
-6. Run the `node start` command again and the bot will be up and running
+3. Run the command `bash node.sh`. The code will now create two files
+4. You can set the env variable DISCORD_TOKEN to your token or write it after the = character in the `.env` file. You can get a token [here](https://discord.com/developers/applications/)
+5. Run `bash node.sh` again
 ### Docker
 If you have Docker installed on your machine, another option is to use the Dockerfile.example.
 
