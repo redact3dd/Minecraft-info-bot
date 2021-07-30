@@ -6,6 +6,7 @@
 * **New installation methods**: `docker.sh` and `node.sh` executables allow for a faster execution with Docker or Node. Run them with `bash {file}`
 * **New command**: version command, returns current version and checks whether a new version is available
 #### Minor changes
+* Fixed ping command
 * Added CHANGELOG.md
 * Updated package.json
 * Added a close function to bot.js to nicely terminate the program on an interrupt or terminate signal
