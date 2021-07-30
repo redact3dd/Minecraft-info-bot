@@ -80,12 +80,10 @@ These steps are the same for both git and downloading a .zip archive
 5. You can set the env variable DISCORD_TOKEN to your token or write it after the = character in the `.env` file. You can get a token [here](https://discord.com/developers/applications/)
 6. Run the `node start` command again and the bot will be up and running
 ### Docker
-If you have Docker installed on your machine, another option is to edit and use the Dockerfile.example. Just remove the extension and change the value of the DISCORD_TOKEN variable to your bot's token
+If you have Docker installed on your machine, another option is to use the Dockerfile.example.
 
-One you're done, build your image with `docker build . --tag Your_image_name:Current_bot_version`
+To create a container called "minecraft-info-bot", edit `Dockerfile.example` and add your token after the `DISCORD_TOKEN` variable. Execute `docker.sh` using bash and wait for the container to be up and running.
 
-Then run it with `docker run Your_image_name:Current_bot_version`
-<br><br>
 If you need help with the bot, join the [Discord server](https://discord.gg/sBMGYXh)
 
 ## Contributing
