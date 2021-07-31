@@ -1,8 +1,12 @@
-.env
+#Node
 node_modules
+#vscode
 .vscode
+#app
+.env
+#data
 servers.json
-test*
-
+#Docker
 Dockerfile
-.dockerignore
+#test
+test*
