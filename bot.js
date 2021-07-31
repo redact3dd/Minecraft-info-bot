@@ -18,6 +18,15 @@ if(!fs.existsSync('./data/servers.json')) {
     });
     console.log('Success!');
 }
+//create config.json if it doesn't exist
+if(!fs.existsSync('./data/config.json')) {
+    console.log('config.json does not exist');
+    console.log('Creating config.json...');
+    fs.writeFileSync('./data/servers.json', '{"defaultPrefix": "!"}', err => {
+        console.error(err);
+    });
+    console.log('Success!');
+}
 //check if DISCORD_TOKEN is defined
 if(!process.env.DISCORD_TOKEN) {
     console.log('The DISCORD_TOKEN environment variable is not defined');
