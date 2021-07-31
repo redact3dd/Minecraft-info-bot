@@ -85,9 +85,14 @@ These steps are the same for both git and downloading a .zip archive
 4. You can set the env variable DISCORD_TOKEN to your token or write it after the = character in the `.env` file. You can get a token [here](https://discord.com/developers/applications/)
 5. Run `bash node.sh` again
 ### Docker
-If you have Docker installed on your machine, another option is to use the Dockerfile.example.
+If you have Docker installed on your machine, another option is to use a Dockerfile
 
-To create a container called "minecraft-info-bot", edit `Dockerfile.example` and add your token after the `DISCORD_TOKEN` variable. Execute `docker.sh` using bash and wait for the container to be up and running.
+There are two available options for Dockerfiles, the first being `Dockerfile.lightweight` and the second one `Dockerfile.standalone`. To install either of them, remove the extention and set the DISCORD_TOKEN environmental variable.
+
+* Dockerfile.lightweight: lighter, requires the repository to be locally installed. Approximate size: 63.85 MB
+* Dockerfile.standalone: doesn't require any additional file. Approximate size: 79 MB
+
+To create a lightweight container called "minecraft-info-bot", edit `Dockerfile.lightweight` and add your token after the `DISCORD_TOKEN` variable. Execute `docker.sh` using bash and wait for the container to be up and running
 
 If you need help with the bot, join the [Discord server](https://discord.gg/sBMGYXh)
 

@@ -1,0 +1,15 @@
+FROM alpine:3.14
+
+RUN apk add git
+
+RUN apk add npm
+
+RUN git clone https://github.com/Jystro/Minecraft-info-bot --depth 1 --branch v2.2.0-preview
+
+WORKDIR /Minecraft-info-bot
+
+RUN npm ci
+
+ENV DISCORD_TOKEN=
+
+CMD ["node", "."]

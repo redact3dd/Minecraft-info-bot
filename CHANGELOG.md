@@ -11,3 +11,4 @@
 * Updated package.json
 * Added a close function to bot.js to nicely terminate the program on an interrupt or terminate signal
 * Changes to README.md and gitignore
+* Updated npm repositories
