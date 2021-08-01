@@ -80,7 +80,7 @@ client.on('message', message => {
         }
         catch(err) {
             console.error(err);
-            message.reply('Something went wrong while executing that command');
+            message.reply('something went wrong while executing that command');
         }
     }
     //safe commands, to retrieve the prefix if forgotten
@@ -91,7 +91,7 @@ client.on('message', message => {
             client.commands.get('help').execute(message, args.slice(1, args.length), prefix);
         }
         catch(err) {
-            message.reply('Something went wrong while executing that command');
+            message.reply('something went wrong while executing that command');
         }
     }
 });
