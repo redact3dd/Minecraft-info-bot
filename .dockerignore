@@ -5,8 +5,7 @@ node_modules
 # test
 test*
 # git
-.git
-.gitignore
+.git*
 # docker
 Dockerfile*
 # app
