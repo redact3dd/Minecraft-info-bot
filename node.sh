@@ -1,2 +1,0 @@
-npm intall
-npm start
