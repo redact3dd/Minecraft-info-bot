@@ -10,3 +10,5 @@ servers.json
 Dockerfile
 #test
 test*
+#TS compiled files
+dist/**
