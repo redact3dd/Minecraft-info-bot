@@ -44,4 +44,6 @@ client.on(Events.InteractionCreate, async interaction => {
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
+
+
 client.login(process.env.DISCORD_TOKEN);
