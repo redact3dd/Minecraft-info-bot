@@ -9,7 +9,7 @@ async function execute(interaction: ChatInputCommandInteraction) {
 		const ping = interaction.createdTimestamp;
 		interaction.fetchReply().then(response => {
 			const pong = response.createdTimestamp;
-			interaction.followUp(`Response time: ${pong - ping}ms`);
+			interaction.editReply(`Response time: ${pong - ping}ms`);
 		})
 	});
 }
