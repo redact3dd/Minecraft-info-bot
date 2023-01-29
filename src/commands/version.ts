@@ -10,13 +10,11 @@ const data = new SlashCommandBuilder()
 async function execute(interaction: ChatInputCommandInteraction) {
 	await interaction.deferReply();
 
-	let req = request('https://github.com/Jystro/Minecraft-info-bot/releases/latest', res => {
+	const req = request('https://github.com/Jystro/Minecraft-info-bot/releases/latest', res => {
 		interaction.editReply(`Current version is ${JSON.parse(readFileSync(join(__dirname, '../../package.json')).toString()).version}. Latest version is ${res.headers.location?.split('/').pop()}`);
 	});
 
-	req.on('error', err => {
-		console.error(err);
-	});
+	req.on('error', console.error);
 	req.end();
 }
 
