@@ -4,7 +4,7 @@ import { request } from "node:https";
 type Uuid = {
 	id?: string,
 	name?: string
-}
+};
 
 const data = new SlashCommandBuilder()
 	.setName('uuid')
