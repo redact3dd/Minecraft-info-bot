@@ -6,9 +6,5 @@ node_modules
 .env
 #data
 servers.json
-#Docker
-Dockerfile
 #test
 test*
-#TS compiled files
-dist/**

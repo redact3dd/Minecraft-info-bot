@@ -1,9 +1,23 @@
 import { Client, Collection, Events, GatewayIntentBits } from 'discord.js';
 import * as dotenv from 'dotenv';
+import { spawn } from 'node:child_process';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
 dotenv.config();
+
+const child = spawn('node', ['dist/deploy-commands.js']);
+
+child.stdout.setEncoding('utf-8');
+child.stdout.on('data', data => {
+	console.log('[deploy-commands]: ', data);
+});
+
+child.stderr.setEncoding('utf-8');
+child.stderr.on('data', data => {
+	console.log('[deploy-commands]: ', data);
+});
+
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 client.commands = new Collection();

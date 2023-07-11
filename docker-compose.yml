@@ -1,0 +1,13 @@
+#This is an example of docker-compose.yml
+#Customise according to your needs
+version: '3.9'
+services:
+  app:
+    image: minecraft-info-bot:latest
+    restart: always
+    container_name: minecraft-info-bot
+    environment:
+      - DISCORD_TOKEN=<YOUR_TOKEN>
+      - DISCORD_CLIENTID=<BOT_ID>
+    volumes:
+      - ./data:/app/data
