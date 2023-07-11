@@ -70,7 +70,7 @@ These steps are the same for both git and downloading a .zip archive
 
 
 ### Docker
-If you have Docker installed on your machine, clone the repository and build the image from Dockerfile. [Docker-compose.yml](https://github.com/Jystro/Minecraft-info-bot/blob/v3.0/docker-compose.yml) example is also available
+If you have Docker installed on your machine, clone the repository and build the image from Dockerfile. [Docker-compose.yml](https://github.com/Jystro/Minecraft-info-bot/blob/v3.0.1/docker-compose.yml) example is also available
 
 Otherwise,
 

@@ -28,6 +28,4 @@ COPY --chown=app dist/ /app/dist/
 
 ENV DISCORD_TOKEN= DISCORD_CLIENTID=
 
-VOLUME /app/data
-
 CMD ["node", "."]

@@ -9,5 +9,3 @@ services:
     environment:
       - DISCORD_TOKEN=<YOUR_TOKEN>
       - DISCORD_CLIENTID=<BOT_ID>
-    volumes:
-      - ./data:/app/data
