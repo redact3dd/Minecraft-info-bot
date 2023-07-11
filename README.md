@@ -70,9 +70,9 @@ These steps are the same for both git and downloading a .zip archive
 
 
 ### Docker
-If you have Docker installed on your machine, another option is to download the [minecraft-info-bot.image](https://github.com/Jystro/Minecraft-info-bot/blob/v3.0/minecraft-info-bot.image) file and run it. [Docker-compose.yml](https://github.com/Jystro/Minecraft-info-bot/blob/v3.0/docker-compose.yml) example is also available
+If you have Docker installed on your machine, clone the repository and build the image from Dockerfile. [Docker-compose.yml](https://github.com/Jystro/Minecraft-info-bot/blob/v3.0/docker-compose.yml) example is also available
 
-Otherwise, clone the repository and build the image yourself
+Otherwise,
 
 Remember to set the DISCORD_TOKEN and DISCORD_CLIENTID environmental variables and to create a volume for presistent data. You can find the Client_id by activating developer settings in Discord and right clicking the bot's profile -> Copy User Id
 
